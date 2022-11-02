@@ -24,9 +24,24 @@
 
 <body>
 
-    @foreach ($movies as $movie)
-        <p>{{ $movie['title'] }}</p>
-    @endforeach
+    <div class="container py-2">
+
+        <div class="card-container d-flex flex-wrap gap-5 justify-content-center">
+
+            @foreach ($movies as $movie)
+                <div class="card col-4 p-2">
+                    <h1> {{ $movie['title'] }} </h1>
+                    <h5> {{ $movie['original_title'] }} </h5>
+
+                    <p class="text-capitalize"> Nazionalità: {{ $movie['nationality'] }} </p>
+                    <p> Anno pubblicazione: {{ $movie['date'] }} </p>
+                    <p> Voto: {{ $movie['vote'] }} </p>
+                </div>
+            @endforeach
+
+        </div>
+
+    </div>
 
 </body>
 
